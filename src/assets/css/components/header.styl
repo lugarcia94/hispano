@@ -16,6 +16,12 @@
 
     li
         width: 30%
+        position: relative
+
+        &:hover
+            ul.sub-menu
+                opacity: 1
+                visibility: visible
         a
             color: #fff
             text-transform: uppercase
@@ -251,7 +257,7 @@ form#searchform
 
 .side-menu-wrapper {
     overflow: hidden 
-    background: #f1f1f1 
+    background: #232323 
     padding: 20px
     position: fixed 
     top: 0 
@@ -327,7 +333,7 @@ header#masthead {
 
 input#s 
     border: 1px solid #4bd7c8
-    border-radius: 0
+    border-radius: 3px
     height: 45px
     font-size: 13px
     padding-left: 10px
@@ -418,3 +424,35 @@ input#searchsubmit
     left: 0
     transition: all 150ms ease-in-out
     z-index: 9999
+
+ul.sub-menu 
+    position: absolute
+    margin: 0
+    background: #fff
+    top: 100%
+    padding: 20px
+    border-radius: 3px
+    min-width: 270px
+    left: 50%
+    transform: translateX(-50%)
+    opacity 0
+    visibility hidden
+    box-shadow: 2.121px 2.121px 14px 0px rgba(0,0,0,0.08)
+
+    @media(max-width: 991px)
+        background: transparent
+        position relative
+        left: 0
+        transform: none
+        opacity: 1
+        visibility: visible
+        min-width: 0
+        box-shadow: none
+
+    li
+        width: 100%
+
+        a
+            color: #252525
+            margin: 6px 0
+            font-size: 13px

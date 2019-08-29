@@ -1,51 +1,45 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package auaha
- */
+ /**
+  * The template for displaying all single posts
+  *
+  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+  *
+  * @package auaha
+   * Template Name: Categorias
+  */
+ get_header(); ?>
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="left--posts">
+ 
 
-get_header(); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> 
+                    <div class="post__container">
+        
+                        <div class="container__post">
+                        <div class="img__post">
+                    <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                </div>
+                            <div class="data--coments">
+         
+                                    <span><img src="<?php bloginfo('template_directory'); ?>/img/tempo.png"> <?php $post_date = get_the_date( 'd/m/Y' ); echo $post_date; ?></span>
+                                    <span class="last"><img src="<?php bloginfo('template_directory'); ?>/img/coments.png"> <?php comments_number('0', '1', '%'); ?> </span>
+                            </div>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+                            <a href="<?php echo get_permalink($post->ID); ?>"><div class="title__post"><?php the_title(); ?></div></a>
+                            <a href="<?php echo get_permalink($post->ID); ?>"><div class="desc__post"><?php the_field('descricao_curta'); ?></div></a>
+                            <div class="tags__post">
+                            <?php
+                                if(get_the_tag_list()) {
+                                echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
+                                }
+                            ?>
+                        </div>
+                        </div>
+                    </div>
 
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+                <?php endwhile; endif;?>
+            </div>
+        </main> 
+    </div>
+<?php get_footer(); ?>

@@ -72,9 +72,9 @@ get_header(); ?>
             </div>
 
         <?php } } ?>
-
-        <?php wordpress_pagination(); ?>
-
+        <div class="pagination">
+            <?php wordpress_pagination(); ?>
+        </div>
         </div>
  
         </div>

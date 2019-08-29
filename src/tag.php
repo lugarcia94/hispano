@@ -8,7 +8,7 @@
    * Template Name: Categorias
   */
  get_header(); ?>
-<div id="primary" class="content-area">
+    <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <div class="left--posts">
  
@@ -17,7 +17,11 @@
                     <div class="post__container">
         
                         <div class="container__post">
+                        <div class="img__post">
+                    <a href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                </div>
                             <div class="data--coments">
+         
                                     <span><img src="<?php bloginfo('template_directory'); ?>/img/tempo.png"> <?php $post_date = get_the_date( 'd/m/Y' ); echo $post_date; ?></span>
                                     <span class="last"><img src="<?php bloginfo('template_directory'); ?>/img/coments.png"> <?php comments_number('0', '1', '%'); ?> </span>
                             </div>
