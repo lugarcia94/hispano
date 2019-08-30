@@ -28,13 +28,7 @@
 
                             <a href="<?php echo get_permalink($post->ID); ?>"><div class="title__post"><?php the_title(); ?></div></a>
                             <a href="<?php echo get_permalink($post->ID); ?>"><div class="desc__post"><?php the_field('descricao_curta'); ?></div></a>
-                            <div class="tags__post">
-                            <?php
-                                if(get_the_tag_list()) {
-                                echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
-                                }
-                            ?>
-                        </div>
+                            <a  class="leia__mais" href="<?php echo get_permalink($post->ID); ?>" title="<?php the_title(); ?>">Leia mais</a>
                         </div>
                     </div>
 

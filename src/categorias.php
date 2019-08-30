@@ -52,12 +52,7 @@
 
                         <a href="<?php echo get_permalink($post->ID); ?>"><div class="title__post"><?php the_title(); ?></div></a>
                         <a href="<?php echo get_permalink($post->ID); ?>"><div class="desc__post"><?php echo $texto; ?></div></a>
-                        <div class="tags__post">
-                        <ul>
-                            <li>E-commerce</li>
-                            <li>Melhorias</li>
-                        </ul>
-                    </div>
+ 
                     </div>
                 </div>
 

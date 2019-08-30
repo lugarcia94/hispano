@@ -10,13 +10,7 @@
 get_header(); ?>
 <div class="content container container__full">
     <div class="left--posts">
-        <div class="tags__post">
-        <?php
-            if(get_the_tag_list()) {
-                echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
-            }
-        ?>
-        </div>
+ 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php $my_postid = $post->ID; ?>
             <div class="title__single">
@@ -27,15 +21,9 @@ get_header(); ?>
                     <span><img src="<?php bloginfo('template_directory'); ?>/img/tempo.png"> <?php $post_date = get_the_date( 'd/m/Y' ); echo $post_date; ?></span>
                     <span class="last"><img src="<?php bloginfo('template_directory'); ?>/img/coments.png"> <?php comments_number('0', '1', '%'); ?> </span>
                 </div>
- 
-                
-                <div class="share">
-                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ab2b1b5936742a9"></script>
-                    <div class="addthis_inline_share_toolbox"></div>
-                </div>
             </div>
             
-
+            <div class="texto__img"><?php the_post_thumbnail(); ?></div>
             <div class="sobre__text">
                 <?php  
                     $content_post = get_post($my_postid);
