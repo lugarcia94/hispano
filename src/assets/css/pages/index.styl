@@ -8,7 +8,14 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    margin: 0 auto
+
+.single 
+    .left--posts
+        margin: 0
+        max-width: 70%
+
+        @media(max-width 991px)
+            max-width 100%
 
 .single
     .left--posts
@@ -51,7 +58,7 @@
         &:hover
             text-decoration: none
             .title__post
-                color: #4bd7c8
+                color: #49140d
 
     .title__post 
         max-width: 100%
@@ -60,7 +67,7 @@
         text-align: center
 
         &:hover 
-            color: #4bd7c8
+            color: #49140d
 
     .author__post 
         font-size: 13px
@@ -85,12 +92,12 @@
         text-align: center
 
         a 
-            color: #4bd7c8  
+            color: #49140d  
         h1 
             font-size: 0.6875rem;
 
         &:hover 
-            color: #4bd7c8!important
+            color: #49140d!important
 
 .tags__post 
     ul 
@@ -243,11 +250,11 @@
 
 .link__colunista
     margin: 0
-    border-bottom: 1px solid #4bd7c857
+    border-bottom: 1px solid #49140d57
     padding-bottom: 20px
 
     a 
-        color: #4bd7c8
+        color: #49140d
         font-size: 11px
 
         &:hover
@@ -268,7 +275,7 @@
 
         &:hover
             text-decoration: none
-            color: #4bd7c8
+            color: #49140d
 
 .posts__lidos
     margin-top: 30px
@@ -279,7 +286,7 @@
 
 
     span
-        color:#4bd7c8
+        color:#49140d
         padding: 30px 0
 
 div#primary 
@@ -410,7 +417,7 @@ a#loadmore
         width 40px
         height 40px
         border-radius: 3px
-        background: #4bd7c8
+        background: #49140d
         color: #fff
         margin: 0 5px
         font-weight: 700
@@ -426,7 +433,7 @@ a#loadmore
     
 
 a.leia__mais 
-    background: #4bd7c8
+    background: #49140d
     width: 50%
     display: block
     text-align: center
