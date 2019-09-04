@@ -2,7 +2,7 @@
   "name": "hispano",
   "theme": "hispano",
   "version": "1.0.0",
-  "description": "Theme Default",
+  "description": "hispano",
   "main": "gulpfile.js",
   "scripts": {
     "webpack-watch": "webpack --watch --colors --progress",
